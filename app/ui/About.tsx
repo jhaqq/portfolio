@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <div className="h-screen w-full bg-[#FEF6E9] flex justify-center items-center">
-      <div className="flex rounded-xl grow flex-col items-center justify-between gap-y-20 px-3 py-4 max-w-3/5">
+      <div className="flex grow flex-col items-center justify-between gap-y-20 3xl:max-w-3/5">
         <h1 className="font-bold text-4xl">
           So... What Should We Build <span className="text-purple-300 italic">Next?</span>
         </h1>
@@ -14,7 +14,7 @@ export default function About() {
                 alt="skill"
                 src={"/WebDev.jpg"}
                 className="rounded-4xl"
-                layout="fill"
+                fill={true}
               />
             </div>
             <p className="mb-2 font-bold">Websites</p>
@@ -29,7 +29,7 @@ export default function About() {
                 alt="skill"
                 src={"/Dashboard.jpg"}
                 className="rounded-4xl"
-                layout="fill"
+                fill={true}
               />
             </div>
             <p className="mb-2 font-bold">Dashboards</p>
@@ -43,7 +43,7 @@ export default function About() {
                 alt="skill"
                 src={"/MobileDev.webp"}
                 className="rounded-4xl"
-                layout="fill"
+                fill={true}
               />
             </div>
             <p className="mb-2 font-bold">Mobile Apps</p>
