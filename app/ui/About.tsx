@@ -84,7 +84,7 @@ export default function About() {
           <span className="text-purple-600 italic">Next?</span>
         </h1>
 
-        <div className="flex sm:hidden justify-center items-center gap-7">
+        <div className="flex 2xl:hidden justify-center items-center gap-7">
           <ChevronLeftIcon width={48} height={48} onClick={handleDecrease} className="text-yellow-600"/>
           <SkillCard
             image={skills[skillIndex].image}
@@ -95,7 +95,7 @@ export default function About() {
         </div>
 
         {/* Skill Cards Section Large*/}
-        <div className="hidden sm:flex flex-wrap justify-center gap-8 sm:gap-12">
+        <div className="hidden 2xl:flex flex-wrap justify-center gap-8 sm:gap-12">
           {skills.map((skill, index) => (
             <SkillCard
               key={index}

@@ -66,7 +66,7 @@ export default function Experience() {
   useEffect(() => {
     // Function to handle screen width change
     const handleResize = () => {
-      setIsLargeScreen(window.innerWidth >= 640);
+      setIsLargeScreen(window.innerWidth >= 1536);
     };
 
     // Set initial screen size
@@ -93,7 +93,7 @@ export default function Experience() {
 
         {/* Toggle Buttons for Small Screens */}
         {!isLargeScreen && (
-          <div className="flex justify-center items-center sm:hidden gap-4">
+          <div className="flex justify-center items-center 2xl:hidden gap-4">
             <div
               className={clsx(
                 "rounded-xl px-4 py-2 text-center font-bold text-lg transition-colors",
@@ -124,11 +124,11 @@ export default function Experience() {
         )}
 
         {/* Content Section */}
-        <div className="flex flex-col sm:flex-row xl:justify-between items-center gap-6 xl:gap-12 w-full max-w-5xl">
+        <div className="flex flex-col 2xl:flex-row xl:justify-between items-center gap-6 xl:gap-12 w-full max-w-5xl">
           {/* Skills Section */}
           <div
             className={clsx(
-              "grid grid-cols-2 sm:grid-cols-3 gap-6 justify-center items-center flex-shrink-0",
+              "grid grid-cols-2 2xl:grid-cols-3 gap-6 justify-center items-center flex-shrink-0",
               {
                 hidden: !isLargeScreen && active !== "skills",
               }
@@ -159,7 +159,7 @@ export default function Experience() {
                 }`}
                 onClick={() => setJobIndex(jobIndex - 1)}
               />
-              <p className="text-lg sm:text-2xl py-2 px-6 bg-yellow-500 text-white rounded-lg shadow-md transition-transform transform hover:scale-105">
+              <p className="text-lg w-fit sm:text-2xl py-2 px-6 bg-yellow-500 text-white rounded-lg shadow-md transition-transform transform hover:scale-105">
                 {jobs[jobIndex].year}
               </p>
               <ChevronDownIcon
@@ -175,7 +175,7 @@ export default function Experience() {
 
             {/* Experience Details */}
             <div className="mt-4 text-center">
-              <p className="text-xl sm:text-2xl font-semibold text-yellow-700">
+              <p className="text-xl sm:text-2xl font-semibold text-yellow-700 mb-4">
                 {jobs[jobIndex].title}
               </p>
               {jobs[jobIndex].responsibilities.map((responsibility, index) => (
