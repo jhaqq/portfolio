@@ -84,7 +84,7 @@ export default function About() {
         </h1>
 
         <div className="flex sm:hidden justify-center items-center gap-7">
-          <ChevronLeftIcon width={48} height={48} onClick={handleDecrease} />
+          <ChevronLeftIcon width={48} height={48} onClick={handleDecrease} className="text-yellow-600"/>
           <SkillCard
             image={skills[skillIndex].image}
             title={skills[skillIndex].title}
