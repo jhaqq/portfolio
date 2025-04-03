@@ -25,7 +25,7 @@ export default function Home() {
       </div>
 
       {/* Subtle Scroll Prompt */}
-      <div className="absolute bottom-6 sm:bottom-10 flex flex-col items-center">
+      <div className="absolute bottom-30 sm:bottom-10 flex flex-col items-center">
         <p className="text-gray-500 text-sm sm:text-lg mb-1 sm:mb-2">Scroll to explore</p>
         <div className="w-4 h-4 sm:w-6 sm:h-6 bg-gray-400 rounded-full animate-bounce"></div>
       </div>
