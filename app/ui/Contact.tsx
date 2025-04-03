@@ -21,7 +21,7 @@ export default function Contact() {
             Reach out via email:{" "}
             <span className="font-bold text-blue-600">
               <a
-                href="mailto:hello@jacob.dev"
+                href="mailto:jacobhaqq20@gmail.com"
               >
                 jacobhaqq20@gmail.com
               </a>
