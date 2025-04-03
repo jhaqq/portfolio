@@ -15,6 +15,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Jacob Haqq",
   description: "Jacob Haqq's Personal Showcase",
+  openGraph: {
+    title: "Jacob Haqq",
+    description: "Jacob Haqq's Personal Showcase",
+    images: [
+      {
+        url: "/favicon.ico",
+        alt: "Favicon image", 
+      },
+    ],
+    url: "https://jacobhaqq.com", // This should also be a string
+    type: "website",
+  },
 };
 
 export default function RootLayout({
