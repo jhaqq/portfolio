@@ -17,7 +17,7 @@ function SkillCard({
   return (
     <div className="flex flex-col items-center max-w-[60%] sm:max-w-72 sm:transition-transform sm:transform sm:hover:scale-105 sm:hover:rotate-1 shadow-lg bg-gradient-to-t from-white to-gray-50 rounded-lg overflow-hidden py-6">
       <div className="w-[200px] h-[100px] sm:w-[250px] sm:h-[190px] border relative mb-4 sm:mb-6 px-6 rounded-t-xl overflow-hidden">
-        <Image alt={title} src={image} className="object-cover" fill={true} />
+        <Image alt={title} src={image} className="object-cover" fill={true} priority={true} />
       </div>
       <p className="mb-2 font-bold text-xl sm:text-2xl text-gray-800">
         {title}
@@ -68,6 +68,7 @@ export default function About() {
         "The world is your oyster. We can work together to bring your most creative ideas to life.",
     },
   ];
+  
 
   return (
     <div id="#about" className="h-screen w-full bg-gradient-to-b from-yellow-200 to-yellow-50 flex justify-center items-center relative overflow-hidden">
