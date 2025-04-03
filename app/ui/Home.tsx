@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div id="#home" className="flex flex-col items-center w-full h-screen bg-gradient-to-b from-yellow-200 to-yellow-50 relative overflow-hidden">
       {/* Large Semicircle */}
-      <div className="absolute w-full h-[50vh] sm:h-[75vh] bg-yellow-300 rounded-b-full shadow-lg top-0 overflow-hidden">
+      <div className="absolute w-full h-[65vh] sm:h-[75vh] bg-yellow-300 rounded-b-full shadow-lg top-0 overflow-hidden">
         {/* Animated Dots */}
         <div className="absolute top-4 left-4 w-3 h-3 bg-yellow-400 rounded-full sm:w-4 sm:h-4 sm:top-10 sm:left-10 animate-bounce"></div>
 
