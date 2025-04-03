@@ -1,56 +1,108 @@
+"use client";
+
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
-export default function About() {
+import { useState } from "react";
+
+function SkillCard({
+  image,
+  title,
+  description,
+}: {
+  image: string;
+  title: string;
+  description: string;
+}) {
   return (
-    <div className="h-screen w-full bg-[#FEF6E9] flex justify-center items-center">
-      <div className="flex grow flex-col items-center justify-between gap-y-20 3xl:max-w-3/5">
-        <h1 className="font-bold text-4xl">
-          So... What Should We Build <span className="text-purple-300 italic">Next?</span>
+    <div className="flex flex-col items-center max-w-[60%] sm:max-w-72 sm:transition-transform sm:transform sm:hover:scale-105 sm:hover:rotate-1 shadow-lg bg-gradient-to-t from-white to-gray-50 rounded-lg overflow-hidden py-6">
+      <div className="w-[200px] h-[100px] sm:w-[250px] sm:h-[190px] border relative mb-4 sm:mb-6 px-6 rounded-t-xl overflow-hidden">
+        <Image alt={title} src={image} className="object-cover" fill={true} />
+      </div>
+      <p className="mb-2 font-bold text-xl sm:text-2xl text-gray-800">
+        {title}
+      </p>
+      <p className="text-center text-sm sm:text-lg text-gray-600 px-2 sm:px-4">
+        {description}
+      </p>
+    </div>
+  );
+}
+
+export default function About() {
+  const [skillIndex, setSkillIndex] = useState(0);
+
+  const handleDecrease = () => {
+    if (skillIndex == 0) setSkillIndex(3);
+    else setSkillIndex(() => skillIndex - 1);
+  };
+
+  const handleIncrease = () => {
+    if (skillIndex == 3) setSkillIndex(0);
+    else setSkillIndex(() => skillIndex + 1);
+  }
+
+  const skills = [
+    {
+      image: "/WebDev.jpg",
+      title: "Websites",
+      description:
+        "Simple, but effective. A clean site can drive your engagement and boost your sales.",
+    },
+    {
+      image: "/Dashboard.jpg",
+      title: "Dashboards",
+      description:
+        "See your figures in a flash. Make the right business decisions using the most up-to-date information.",
+    },
+    {
+      image: "/MobileDev.webp",
+      title: "Mobile Apps",
+      description:
+        "Mobile apps are the future. Give your business an edge with an interactive application.",
+    },
+    {
+      image: "/Question.jpg",
+      title: "Something Else?",
+      description:
+        "The world is your oyster. We can work together to bring your most creative ideas to life.",
+    },
+  ];
+
+  return (
+    <div id="#about" className="h-screen w-full bg-gradient-to-b from-yellow-200 to-yellow-50 flex justify-center items-center relative overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute w-10 h-10 sm:w-16 sm:h-16 bg-purple-300 rounded-full top-4 left-4 sm:top-12 sm:left-8 animate-pulse"></div>
+      <div className="absolute w-16 h-16 sm:w-24 sm:h-24 bg-purple-400 rounded-full bottom-10 right-8 sm:bottom-20 sm:right-14 animate-bounce"></div>
+      <div className="absolute w-24 h-24 sm:w-32 sm:h-32 bg-purple-100 rounded-full top-1/4 right-1/5 opacity-30"></div>
+
+      <div className="flex flex-col items-center justify-between gap-y-16 sm:gap-y-20 px-4 sm:px-0 3xl:max-w-3/5">
+        {/* Main Heading */}
+        <h1 className="font-extrabold text-3xl sm:text-5xl lg:text-7xl text-center text-gray-800 leading-tight">
+          So... What Should We Build{" "}
+          <span className="text-purple-600 italic">Next?</span>
         </h1>
-        <div className="p-4 flex flex-row gap-10">
-          <div className="flex flex-col items-center max-w-72">
-            <div className="w-[250px] h-[190px] rounded-4xl border relative mb-6">
-              <Image
-                alt="skill"
-                src={"/WebDev.jpg"}
-                className="rounded-4xl"
-                fill={true}
-              />
-            </div>
-            <p className="mb-2 font-bold">Websites</p>
-            <p className="text-center max-w-[200px]">
-              Simple, yet effective. A clean site can drive your engagement and
-              boost your sales.
-            </p>
-          </div>
-          <div className="flex flex-col items-center max-w-72">
-            <div className="w-[250px] h-[190px] rounded-4xl border relative mb-6">
-              <Image
-                alt="skill"
-                src={"/Dashboard.jpg"}
-                className="rounded-4xl"
-                fill={true}
-              />
-            </div>
-            <p className="mb-2 font-bold">Dashboards</p>
-            <p className="text-center max-w-[200px]">
-              See your figures in a flash. Make the right business decisions using the most up-to-date information.
-            </p>
-          </div>
-          <div className="flex flex-col items-center max-w-72">
-            <div className="w-[250px] h-[190px] rounded-4xl border relative mb-6">
-              <Image
-                alt="skill"
-                src={"/MobileDev.webp"}
-                className="rounded-4xl"
-                fill={true}
-              />
-            </div>
-            <p className="mb-2 font-bold">Mobile Apps</p>
-            <p className="text-center max-w-[200px]">
-              Mobile apps are the future. Give your business an edge with an interactive application.
-            </p>
-          </div>
+
+        <div className="flex sm:hidden justify-center items-center gap-7">
+          <ChevronLeftIcon width={48} height={48} onClick={handleDecrease} />
+          <SkillCard
+            image={skills[skillIndex].image}
+            title={skills[skillIndex].title}
+            description={skills[skillIndex].description}
+          />
+          <ChevronRightIcon width={48} height={48} onClick={handleIncrease}/>
+        </div>
+
+        {/* Skill Cards Section Large*/}
+        <div className="hidden sm:flex flex-wrap justify-center gap-8 sm:gap-12">
+          {skills.map((skill, index) => (
+            <SkillCard
+              key={index}
+              image={skill.image}
+              title={skill.title}
+              description={skill.description}
+            />
+          ))}
         </div>
       </div>
     </div>
