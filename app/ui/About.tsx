@@ -90,7 +90,7 @@ export default function About() {
             title={skills[skillIndex].title}
             description={skills[skillIndex].description}
           />
-          <ChevronRightIcon width={48} height={48} onClick={handleIncrease}/>
+          <ChevronRightIcon width={48} height={48} onClick={handleIncrease} className="text-yellow-600"/>
         </div>
 
         {/* Skill Cards Section Large*/}
