@@ -80,28 +80,27 @@ export default function Experience() {
   ];
 
   return (
-    <div className="sm:h-screen w-full flex flex-1 justify-center items-center bg-gradient-to-b from-yellow-200 to-yellow-50 relative">
+    <div className="h-screen w-full flex flex-1 justify-center items-center bg-gradient-to-b from-yellow-200 to-yellow-50 relative">
       {/* Decorative Elements */}
       <div className="absolute w-16 h-16 bg-yellow-400 rounded-full top-10 left-10 animate-pulse"></div>
       <div className="absolute w-24 h-24 bg-yellow-300 rounded-full bottom-10 right-20 animate-bounce"></div>
 
-      <div className="flex flex-col w-full sm:h-screen sm:w-4/5 items-center relative px-4 py-3 justify-center gap-y-10 sm:gap-y-0">
+      <div className="flex flex-col w-full h-screen sm:w-4/5 items-center relative px-4 py-3 justify-center gap-y-10 sm:gap-y-0">
         {/* Section Heading */}
         <h1 className="text-4xl sm:text-6xl font-extrabold mb-10 sm:mb-14 text-gray-800 text-center">
           Skills & Experience
         </h1>
 
-        <div className="flex flex-col sm:flex-row sm:justify-center items-center gap-8 sm:gap-12 w-full sm:w-3/5">
+        <div className="flex flex-col xl:flex-row xl:justify-between items-center gap-8 xl:gap-12 w-full 3xl:w-3/5">
           {/* Skills Section */}
-          <div className="flex flex-wrap gap-6 justify-center items-center w-full sm:w-2/5">
-
+          <div className="flex flex-wrap gap-x-10 justify-center items-center flex-shrink-0">
             {skills.map((skill, index) => (
               <Skill key={index} image={skill.image} name={skill.name} />
             ))}
           </div>
 
           {/* Experience Section */}
-          <div className="flex-grow w-full sm:w-4/5 lg:max-w-2/5">
+          <div className="flex-grow w-full xl:w-auto xl:max-w-[800px]">
             <div className="flex flex-row items-center gap-6 sm:gap-8">
               <ChevronUpIcon
                 width={36}
