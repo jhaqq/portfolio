@@ -71,20 +71,20 @@ export default function About() {
   
 
   return (
-    <div id="#about" className="h-screen w-full bg-gradient-to-b from-yellow-200 to-yellow-50 flex justify-center items-center relative overflow-hidden">
+    <div id="about" className="min-h-screen w-full bg-gradient-to-b from-yellow-200 to-yellow-50 flex justify-center items-center relative overflow-hidden py-8 sm: py-0">
       {/* Decorative Background Elements */}
-      <div className="absolute w-10 h-10 sm:w-16 sm:h-16 bg-purple-300 rounded-full top-4 left-4 sm:top-12 sm:left-8 animate-pulse"></div>
+      <div className="hidden lg:flex absolute w-10 h-10 sm:w-16 sm:h-16 bg-purple-300 rounded-full top-4 left-4 sm:top-12 sm:left-8 animate-pulse"></div>
       <div className="absolute w-16 h-16 sm:w-24 sm:h-24 bg-purple-400 rounded-full bottom-10 right-8 sm:bottom-20 sm:right-14 animate-bounce"></div>
       <div className="absolute w-24 h-24 sm:w-32 sm:h-32 bg-purple-100 rounded-full top-1/4 right-1/5 opacity-30"></div>
 
       <div className="flex flex-col items-center justify-between gap-y-16 sm:gap-y-20 px-4 sm:px-0 3xl:max-w-3/5">
         {/* Main Heading */}
-        <h1 className="font-extrabold text-3xl sm:text-5xl lg:text-7xl text-center text-gray-800 leading-tight">
-          So... What Should We Build{" "}
+        <h1 className="font-extrabold text-3xl sm:text-5xl lg:text-6xl text-center text-gray-800 leading-tight">
+          So... What Should We Make{" "}
           <span className="text-purple-600 italic">Next?</span>
         </h1>
 
-        <div className="flex 2xl:hidden justify-center items-center gap-7">
+        <div className="flex xl:hidden justify-center items-center gap-7">
           <ChevronLeftIcon width={48} height={48} onClick={handleDecrease} className="text-yellow-600"/>
           <SkillCard
             image={skills[skillIndex].image}
@@ -95,7 +95,7 @@ export default function About() {
         </div>
 
         {/* Skill Cards Section Large*/}
-        <div className="hidden 2xl:flex flex-wrap justify-center gap-8 sm:gap-12">
+        <div className="hidden xl:flex flex-wrap justify-center gap-8 sm:gap-5">
           {skills.map((skill, index) => (
             <SkillCard
               key={index}

@@ -66,7 +66,7 @@ export default function Experience() {
   useEffect(() => {
     // Function to handle screen width change
     const handleResize = () => {
-      setIsLargeScreen(window.innerWidth >= 1536);
+      setIsLargeScreen(window.innerWidth >= 1024);
     };
 
     // Set initial screen size
@@ -80,7 +80,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <div className="h-screen w-full flex justify-center items-center bg-gradient-to-b from-yellow-200 to-yellow-50 relative">
+    <div className="min-h-screen w-full flex justify-center items-center bg-gradient-to-b from-yellow-200 to-yellow-50 relative">
       {/* Decorative Elements */}
       <div className="absolute w-12 h-12 bg-yellow-400 rounded-full top-8 left-8 animate-pulse"></div>
       <div className="absolute w-20 h-20 bg-yellow-300 rounded-full bottom-8 right-16 animate-bounce"></div>
@@ -93,7 +93,7 @@ export default function Experience() {
 
         {/* Toggle Buttons for Small Screens */}
         {!isLargeScreen && (
-          <div className="flex justify-center items-center 2xl:hidden gap-4">
+          <div className="flex justify-center items-center xl:hidden gap-4">
             <div
               className={clsx(
                 "rounded-xl px-4 py-2 text-center font-bold text-lg transition-colors",
@@ -128,7 +128,7 @@ export default function Experience() {
           {/* Skills Section */}
           <div
             className={clsx(
-              "grid grid-cols-2 2xl:grid-cols-3 gap-6 justify-center items-center flex-shrink-0",
+              "grid grid-cols-2 xl:grid-cols-3 gap-6 justify-center items-center flex-shrink-0",
               {
                 hidden: !isLargeScreen && active !== "skills",
               }
